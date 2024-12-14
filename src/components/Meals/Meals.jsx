@@ -1,4 +1,6 @@
 import { useLoaderData } from "react-router-dom";
+import Meal from "../Meal/Meal";
+import './Meals.css'
 
 
 const Meals = () => {
@@ -8,6 +10,12 @@ const Meals = () => {
     return (
         <div>
             <h2 className="text-3xl">Meals Category : {meals.length} </h2>
+            <div className="meals">
+                {
+                    meals.map(meal => <Meal key={meal.idMeal
+                    } meal={meal}></Meal>)
+                }
+            </div>
         </div>
     );
 };
